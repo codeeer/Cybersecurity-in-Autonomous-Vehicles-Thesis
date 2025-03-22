@@ -1,0 +1,25 @@
+CANAttack: Denetleyici Alan Ağı Güvenlik Açıkları Değerlendirmesi
+Bu akademik makale, modern araçlarda yaygın olarak kullanılan bir araç içi iletişim protokolü olan Denetleyici Alan Ağı (CAN) veri yolunun güvenlik açığı analizini sunmaktadır. Araştırma, Damilola Oladimeji ve Sam Houston Eyalet Üniversitesi ve diğer kurumlardan meslektaşları tarafından yürütülmüştür.
+Temel Bulgular:
+
+Güvenlik Açığı Odağı: Araştırmacılar CAN veri yolu tahkim özelliğinin bir saldırı vektörü olarak kullanılabileceğini tespit etmiştir. Bu özellik, birden fazla düğüm aynı anda mesaj göndermeye çalıştığında hangi mesajın öncelik alacağını belirler.
+Saldırı Uygulaması: Bir CAN veri yoluna bağlı dört Elektronik Kontrol Ünitesi (ECU) ile bir test ortamı oluşturdular ve üç aşamada (15, 30 ve 60 dakika) testler gerçekleştirdiler.
+Saldırı Mekanizması: Bir saldırgan şunları yapabilir:
+
+Yüksek öncelik kazanmak için bir mesaj kimliğini taklit etme (özellikle 0x00 kimliğini kullanma)
+Sahte kimlikle sürekli olarak mesaj enjekte etme
+Meşru mesajların iletilmesini engellemek
+
+
+Tanımlanmış Güvenlik Riskleri:
+
+Spoofing saldırıları: Geçerli ECU'lar gibi görünmek için mesaj kimliklerinin taklit edilmesi
+Enjeksiyon saldırıları: Otobüsü sahte mesajlarla doldurmak
+Hizmet Reddi (DoS): Diğer düğümlerin iletişim kurmasını engelleme
+
+
+Gecikme Analizi: Araştırmacılar, ele geçirilen düğümün tüm test senaryolarında sürekli olarak en düşük gecikme süresini (3-7 ms) elde ettiğini, meşru mesajların ise çok daha yüksek gecikme sürelerine maruz kaldığını ve saldırganın veri yolu üzerindeki kontrolünü gösterdiğini tespit etti.
+
+Önemlilik:
+Araştırma, CAN veri yolu protokolünde saldırganların normal araç operasyonlarını aksatmasına izin vererek araç güvenliğini tehlikeye atabilecek kritik bir güvenlik açığını vurgulamaktadır. CAN veri yolu başlangıçta güvenlikten ziyade güvenilirlik için tasarlanmıştır ve mesajları şifreleme veya kimlik doğrulama mekanizmaları olmadan düz metin olarak gönderir.
+Bu çalışma, tahkim özelliğinin nasıl istismar edilebileceğine dair ayrıntılı analizler sunarak ve saldırılar sırasında sistem gecikmesi üzerindeki etkiyi ölçerek önceki araştırmaları genişletmekte ve otomotiv ağlarında daha iyi güvenlik önlemleri geliştirmek için içgörüler sunmaktadır.

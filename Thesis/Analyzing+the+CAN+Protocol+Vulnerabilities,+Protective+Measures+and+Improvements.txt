@@ -1,0 +1,71 @@
+CAN Protokolü Üzerine Makale Özeti ve Analizi
+1. Giriş
+
+Modern araçlar, çeşitli Elektronik Kontrol Üniteleri (ECU), sensörler ve aktüatörler içeren karmaşık elektronik sistemlere sahiptir. Bu sistemler aracılığıyla motor kontrolü, frenleme, güvenlik ve konfor gibi birçok işlev gerçekleştirilir. Araç içi haberleşme için yaygın olarak kullanılan Denetleyici Alan Ağı (Controller Area Network - CAN) protokolü, elektriksel parazitlere dayanıklılığı ve basit kablolama yapısıyla öne çıkar.
+
+Ancak, CAN protokolü güvenlik açısından zayıftır. Başlangıçta sınırlı sayıda ECU arasında iletişim sağlamak amacıyla geliştirildiği için şifreleme, kimlik doğrulama ve veri bütünlüğü kontrolü gibi güvenlik önlemlerini içermemektedir. Bu durum, mesaj enjeksiyonu, Hizmet Reddi (DoS), sahte ECU kimliklendirme gibi çeşitli siber saldırılara karşı savunmasız hale getirir.
+2. CAN Protokolü ve Güvenlik Açıkları
+
+CAN protokolü aşağıdaki özellikleri içerir:
+
+    Çoklu Ana Bilgisayar (Multi-master): Her ECU iletişimi başlatabilir.
+    Yayın Tabanlı (Broadcast): Tüm ECU’lar tüm mesajları alır.
+    Yüksek Hızlı Veri İletimi: Maksimum 1 Mbps hızında çalışır.
+    Elektromanyetik Girişime Karşı Dayanıklılık
+    Hata Tespiti ve Düzeltme Mekanizmaları
+
+Ancak, CAN’in güvenlik açıkları şunlardır:
+✅ Mesaj Enjeksiyonu: Saldırgan, sahte mesajlar göndererek aracı kontrol edebilir.
+✅ Denial of Service (DoS) Saldırıları: Gerçek ECU’ların çalışmasını engellemek için sahte mesajlar gönderilir.
+✅ Sahte ECU Kimliklendirme: Yetkisiz ECU’lar sisteme sızarak yanlış bilgi yayabilir.
+✅ GPS Sahtekarlığı: Aracın yanlış konum bilgisi almasına neden olabilir.
+✅ Uzaktan Sensör Manipülasyonu: Kameralar veya sensörler hedef alınarak yanlış veri oluşturulabilir.
+
+Örnek: Bir hacker, aracın fren sistemine sahte sinyaller göndererek frenleri devre dışı bırakabilir.
+3. Çözüm Önerileri ve Koruma Yöntemleri
+
+Araştırmalara göre, CAN güvenlik açıklarını gidermek için şu yöntemler önerilmektedir:
+
+1️⃣ Ağ Bölümlendirme (Network Subdivision)
+
+    Araç içi ağ segmentlere ayrılarak saldırıların yayılması önlenir.
+
+2️⃣ Şifreleme ve Kimlik Doğrulama
+
+    Verilerin şifrelenmesi ve mesaj gönderenin doğrulanması sağlanarak sahte mesajların önüne geçilir.
+
+3️⃣ Saldırı Tespit Sistemleri (Intrusion Detection Systems - IDS)
+
+    Makine öğrenmesi (ML) ve derin öğrenme (DL) algoritmaları kullanılarak anormal trafik algılanır.
+
+📌 Makine Öğrenmesi Yöntemleri
+
+    Rastgele Orman (Random Forest)
+    Destek Vektör Makineleri (SVM)
+    Derin Sinir Ağları (DNN)
+
+Tablolarla yapılan karşılaştırmalara göre DNN tabanlı saldırı tespit sistemleri %99 doğruluk oranına sahiptir. Ancak, bilinmeyen saldırıları tespit etmede hâlâ zorluklar yaşanmaktadır.
+
+4️⃣ Bloom Filtreleme Teknikleri
+
+    Çerçeve değişikliklerini tespit ederek CAN üzerindeki sahte mesajları belirler. Ancak, gerçek zamanlı tepkilerde gecikmeye neden olabilir.
+
+5️⃣ Olay Tetiklemeli Algılama (Event-Triggered Detection)
+
+    Araç içi anormal durumları otomatik tespit ederek saldırıları engeller.
+
+4. Sonuç ve Öneriler
+
+Makalede, CAN protokolünün mevcut güvenlik açıkları detaylıca analiz edilmiş ve çeşitli koruma yöntemleri önerilmiştir. Ancak, tüm önerilen çözümler belirli zayıflıklara sahiptir.
+
+Öneriler:
+✔ Yeni nesil araçlarda güvenlik odaklı CAN mimarileri geliştirilmelidir.
+✔ Makine öğrenmesi ve yapay zeka destekli saldırı tespit sistemleri yaygınlaştırılmalıdır.
+✔ Kablosuz saldırılara karşı daha sağlam güvenlik önlemleri uygulanmalıdır.
+
+Bu araştırmalar, otomotiv siber güvenliği konusunda daha ileri çözümler geliştirmek için temel oluşturabilir. Özellikle otonom ve bağlantılı araçların yaygınlaşmasıyla CAN protokolüne yönelik saldırılar artacaktır. Bu yüzden, şifreleme, kimlik doğrulama ve yapay zeka destekli güvenlik önlemleri bir an önce uygulanmalıdır.
+
+💡 Örnek Senaryo:
+Bir saldırgan, kablosuz bağlantı üzerinden aracın direksiyon ve fren sistemine uzaktan erişerek aracı kontrol edebilir. Eğer araçta IDS tabanlı bir güvenlik mekanizması varsa, anormal trafik tespit edilerek saldırı önlenebilir.
+
+Bu makale, CAN protokolü güvenliğini sağlamlaştırmak için yeni nesil çözümlerin gerekliliğini vurgulamaktadır.
