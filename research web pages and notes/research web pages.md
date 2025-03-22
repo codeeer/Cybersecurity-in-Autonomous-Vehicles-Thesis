@@ -4,10 +4,10 @@ Bu dosyada, tez çalışmaları için yapılan taramalar sonucunda bulunan önem
 
 ## 1. Yapay Zeka Tez Tarama
 
-- [Consensus] (https://consensus.ai/)
-- [Elicit] (https://elicit.org/)
-- [ResearchRabbit] (https://www.researchrabbit.ai/)
-- [Semantic Scholar] (https://www.semanticscholar.org/)
+- [Consensus](https://consensus.ai/)
+- [Elicit](https://elicit.org/)
+- [ResearchRabbit](https://www.researchrabbit.ai/)
+- [Semantic Scholar](https://www.semanticscholar.org/)
 
 ## 2. Akademik Veritabanları
 - [Google Scholar](https://scholar.google.com/)
